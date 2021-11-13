@@ -11,7 +11,7 @@ describe ImportExport::Query do
   end
 
   it 'builds the endpoint' do
-    expected = 'https://api.trade.gov/gateway/v1/consolidated_screening_list/search'
+    expected = 'https://data.trade.gov/consolidated_screening_list/v1/search'
     expect(described_class.endpoint).to eql(expected)
   end
 
@@ -29,8 +29,8 @@ describe ImportExport::Query do
   end
 
   it 'builds the param lists' do
-    expect(subject.send(:params)[:countries]).to match(/AF\,AX/)
-    expect(subject.send(:params)[:sources]).to match(/CAP\,DPL/)
+    expect(subject.send(:params)[:countries]).to match(/AF,AX/)
+    expect(subject.send(:params)[:sources]).to match(/CAP,DPL/)
   end
 
   it 'strips empty params' do
@@ -40,7 +40,7 @@ describe ImportExport::Query do
 
   it 'calls the API' do
     json = '{"results": [{"foo": "bar"}]}'
-    stub = stub_request(:get, %r{https://api\.trade\.gov/gateway/v1/consolidated_screening_list/search.*})
+    stub = stub_request(:get, %r{https://data\.trade\.gov/consolidated_screening_list/v1/search.*})
            .to_return(status: 200, body: json)
 
     expect(subject.call).to eql(json)
