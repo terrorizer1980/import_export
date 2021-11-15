@@ -15,7 +15,7 @@ describe ImportExport::Client do
   end
 
   it 'calls the API' do
-    stub = stub_request(:get, %r{https://api\.trade\.gov/gateway/v1/consolidated_screening_list/search.*})
+    stub = stub_request(:get, %r{https://data\.trade\.gov/consolidated_screening_list/v1/search.*})
            .to_return(status: 200, body: '{"results": [{"foo": "bar"}, {"foo2": "bar2"}]}')
 
     with_env 'TRADE_API_KEY', 'd77f752c-9769-41ad-b2ac-267b5779353a' do

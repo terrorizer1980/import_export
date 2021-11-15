@@ -2,7 +2,7 @@
 
 [![Gem Version](https://badge.fury.io/rb/import_export.svg)](https://badge.fury.io/rb/import_export) [![Build Status](https://travis-ci.org/benbalter/import_export.svg)](https://travis-ci.org/benbalter/import_export)
 
-A Ruby client for [Trade.gov's Consolidated Screening List](https://developer.trade.gov/consolidated-screening-list.html)
+A Ruby client for [Trade.gov's Consolidated Screening List](https://developer.trade.gov/api-details#api=consolidated-screening-list).
 
 ## Usage
 
@@ -38,7 +38,7 @@ NOTE: `api_key` defaults to `ENV["TRADE_API_KEY"]` if not specified.
 * `size` (number of results per page, defaults to 100)
 * `offset` (defaults to 0)
 
-For more information, see [the Consolidated Screening List API docs](https://developer.trade.gov/consolidated-screening-list.html).
+For more information, see [the Consolidated Screening List API docs](https://developer.trade.gov/api-details#api=consolidated-screening-list).
 
 ### Command line usage
 
@@ -48,7 +48,7 @@ import_export [NAME]
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/consolidated_screening_list/fork )
+1. Fork it (https://github.com/[my-github-username]/consolidated_screening_list/fork)
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)

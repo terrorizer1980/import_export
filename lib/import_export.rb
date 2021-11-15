@@ -15,10 +15,10 @@ require 'import_export/client'
 require 'import_export/query'
 
 Dotenv.load
-RestClient.log = STDOUT unless ENV['DEBUG'].to_s.empty?
+RestClient.log = $stdout unless ENV['DEBUG'].to_s.empty?
 
 module ImportExport
-  API_BASE = 'https://api.trade.gov/gateway/v1/consolidated_screening_list/'
+  API_BASE = 'https://data.trade.gov/consolidated_screening_list/v1/'
 
   def self.user_agent
     "ImportExport/#{ImportExport::VERSION}; +https://github.com/benbalter/import_export)"

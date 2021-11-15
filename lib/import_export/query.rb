@@ -55,12 +55,14 @@ module ImportExport
     def call
       RestClient.get Query.endpoint, {
         :params => params,
-        'Authorization' => "Bearer #{@api_key}",
+        'subscription-key' => api_key,
         'User-Agent' => ImportExport.user_agent
       }
     end
 
     private
+
+    attr_reader :api_key
 
     def params
       params = @params.clone
